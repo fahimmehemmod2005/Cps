@@ -16,6 +16,7 @@ class CustomInputField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(topLabel ?? "", style: MyStyles.title12_400w(color: Color(0xff2C2C2C)),),
+        SizedBox(height: 5.h),
         Container(
           padding: const EdgeInsets.all(1), // border thickness
           decoration: BoxDecoration(

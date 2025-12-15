@@ -23,7 +23,9 @@ class LockScreenView extends GetView<LockScreenController> {
           Text('Login to your account',style: MyStyles.title14_500w(color: Colors.black54),),
           SizedBox(height: 30.h),
           CustomInputField(imagePath: MyIcons.email,hintText: "Enter Email Address",topLabel: "Email",),
-          
+          SizedBox(height: 20.h),
+          CustomInputField(imagePath: MyIcons.finger,hintText: "Enter Email Password",topLabel: "Password",),
+
         ],
       ),
     );
