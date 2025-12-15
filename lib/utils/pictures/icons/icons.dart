@@ -10,5 +10,7 @@ class MyIcons {
   static const String apple = 'assets/icons/apple.svg';
   static const String visibilityOn = 'assets/icons/visibility off.svg';
   static const String check = 'assets/icons/check.svg';
+  static const String person = 'assets/icons/person.svg';
+  static const String date = 'assets/icons/date.svg';
 
 }

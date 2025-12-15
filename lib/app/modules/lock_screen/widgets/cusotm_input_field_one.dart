@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CustomInputField extends StatelessWidget {
+class CustomInputFieldOne extends StatelessWidget {
   final String? topLabel;
   final String? hintText;
   final String? prefixPath;
@@ -13,7 +13,7 @@ class CustomInputField extends StatelessWidget {
   final String? Function(String?)? validator;
   final TextInputType keyboardType;
 
-  const CustomInputField({
+  const CustomInputFieldOne({
     super.key,
     this.topLabel,
     this.hintText,

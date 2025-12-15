@@ -1,119 +1,111 @@
 import 'package:cps/app/modules/lock_screen/controllers/checkbox_controller.dart';
 import 'package:cps/app/modules/lock_screen/widgets/custom_checkbox.dart';
 import 'package:cps/app/modules/lock_screen/widgets/custom_rich_text.dart';
+import 'package:cps/app/modules/signup_screen/controllers/date_of_birth_controller.dart';
+import 'package:cps/app/modules/signup_screen/widgets/custom_input_field_two.dart';
+import 'package:cps/app/modules/signup_screen/widgets/date_time_picker.dart';
 import 'package:cps/app/routes/app_pages.dart';
 import 'package:cps/common/custom_scaffold/custom_scaffold.dart';
 import 'package:cps/common/widgets/custom_gradient_button/custom_gradient_button.dart';
 import 'package:cps/common/widgets/custom_gradient_button/custom_gradient_social_button.dart';
-import 'package:cps/app/modules/lock_screen/widgets/cusotm_input_field_one.dart';
-import 'package:cps/common/widgets/custom_svg/custom_svg.dart';
 import 'package:cps/utils/pictures/icons/icons.dart';
 import 'package:cps/utils/sizes/sizes.dart';
 import 'package:cps/utils/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../controllers/lock_screen_controller.dart';
+import '../controllers/signup_screen_controller.dart';
 
-class LockScreenView extends GetView<LockScreenController> {
-  const LockScreenView({super.key});
+class SignupScreenView extends GetView<SignupScreenController> {
+  const SignupScreenView({super.key});
   @override
   Widget build(BuildContext context) {
+    final DateOfBirthController dobController = Get.put(
+      DateOfBirthController(),
+    );
     final CheckboxController checkController = Get.put(CheckboxController());
-    final LockScreenController textController = Get.put(LockScreenController());
 
     return CustomScaffold(
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           MySizes.topSafeArea,
-          SizedBox(height: 45.h),
+          SizedBox(height: 15.h),
 
-          //_______________ Robot Logo ______________________
-          CustomSvgPicture(
-            assetName: MyIcons.robot,
-            height: 138.93.h,
-            width: 107.66.w,
+          //___________________ Title ______________________
+          Text(
+            "Create an account",
+            style: MyStyles.title24_600w(color: Colors.black),
           ),
 
-          SizedBox(height: 5.h),
-
-          //_________________ Title _______________________
+          //___________________ sub Title ___________________________
           Text(
-            'Welcome Back!',
-            style: MyStyles.title24_600w(color: Color(0xff2C2C2C)),
-          ),
-
-          //_________________ Sub Title _____________________
-          Text(
-            'Login to your account',
+            "Please sign up your account",
             style: MyStyles.title14_500w(color: Colors.black54),
           ),
 
           SizedBox(height: 30.h),
 
-          //____________________ Email Input Field __________________
-          CustomInputFieldOne(
-            controller: textController.email,
-            prefixPath: MyIcons.email,
-            hintText: "Enter Email Address",
-            topLabel: "Email",
+          CustomInputFieldTwo(
+            topLabel: 'Name',
+            hintText: 'Enter Full Name',
+            prefixPath: MyIcons.person,
           ),
 
-          SizedBox(height: 20.h),
+          SizedBox(height: 12.h),
 
-          //_______________________ Password Input Field ___________________
-          CustomInputFieldOne(
-            controller: textController.password,
+          CustomInputFieldTwo(
+            topLabel: 'Email',
+            hintText: 'Enter Email Address',
+            prefixPath: MyIcons.email,
+          ),
+
+          SizedBox(height: 12.h),
+
+          DateTimePicker(dobController: dobController),
+
+          SizedBox(height: 12.h),
+
+          CustomInputFieldTwo(
+            topLabel: 'Password',
+            hintText: 'Enter Your Password',
             prefixPath: MyIcons.finger,
             suffixPath: MyIcons.visibilityOn,
-            hintText: "Enter Email Password",
-            topLabel: "Password",
-            obscureText: true,
           ),
 
-          SizedBox(height: 40.h),
+          SizedBox(height: 12.h),
+
+          CustomInputFieldTwo(
+            topLabel: 'Confirm Password',
+            hintText: 'Confirm Your Password',
+            prefixPath: MyIcons.finger,
+            suffixPath: MyIcons.visibilityOn,
+          ),
+
+          SizedBox(height: 12.h),
 
           Row(
             children: [
-              //______________________ Checkbox _________________________
               GradientCheckbox(
                 value: checkController.isNotEmpty,
                 onTap: checkController.toggle,
               ),
-
               SizedBox(width: 5.w),
-
-              // __________________________ Remember me ___________________
-              Text(
-                "Remember Me",
-                style: MyStyles.title12_400w(color: Color(0xff2C2C2C)),
-              ),
-
-              Spacer(),
-
-              //_________________________ forgot password button __________________
-              GestureDetector(
+              Custom_Rich_Text(
+                firstText: "I agree with ",
+                secondText: "terms & conditions ",
                 onTap: () {},
-                child: Text(
-                  "Forgot Password",
-                  style: MyStyles.title12_400w(color: Color(0xff2C2C2C)),
-                ),
+                thirdText: "and ",
+                fourthText: "privacy policy",
+                onPressed: () {},
               ),
             ],
           ),
 
-          SizedBox(height: 30.h),
+          SizedBox(height: 30),
 
-          //______________________ Sign In button ___________________________
-          CustomGradientButton(
-            buttonText: "Sign In",
-            onTap: () {
-              Get.toNamed(Routes.HOME);
-            },
-          ),
+          CustomGradientButton(buttonText: 'Sign Up', onTap: () {}),
 
-          SizedBox(height: 30.h),
+          SizedBox(height: 30),
 
           //________________________ OR ______________________________________
           Row(
@@ -139,25 +131,23 @@ class LockScreenView extends GetView<LockScreenController> {
                 onPressed: () {},
               ),
               CustomGradientSocialButton(
+                onPressed: () {},
                 imagePath: MyIcons.apple,
                 text: 'Apple',
-                onPressed: () {},
               ),
             ],
           ),
 
           SizedBox(height: 20.h),
 
-          //__________________ signup rich text ______________________
           Custom_Rich_Text(
-            firstText: "Don't have an accout? ",
-            secondText: "Sign Up",
+            firstText: 'Already have an account? ',
+            secondText: "Sign in",
             onTap: () {
-              Get.toNamed(Routes.SIGNUP_SCREEN);
+              Get.toNamed(Routes.LOCK_SCREEN);
             },
           ),
-          SizedBox(height: 49.07.h),
-          MySizes.bottomSafeArea,
+          MySizes.bottomSafeArea
         ],
       ),
     );
