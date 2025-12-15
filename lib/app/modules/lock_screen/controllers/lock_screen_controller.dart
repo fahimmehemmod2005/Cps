@@ -1,23 +1,14 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LockScreenController extends GetxController {
-  //TODO: Implement LockScreenController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  final TextEditingController email = TextEditingController();
+  final TextEditingController password = TextEditingController();
 
   @override
   void onClose() {
+    email.dispose();
+    password.dispose();
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

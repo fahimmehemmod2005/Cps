@@ -17,6 +17,7 @@ class CustomScaffold extends StatelessWidget {
     return Scaffold(
       appBar: appBar,
       body: Container(
+        height: double.infinity,width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
@@ -25,11 +26,9 @@ class CustomScaffold extends StatelessWidget {
             ]
           ),
         ),
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 19),
-            child: body,
-          ),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 19),
+          child: body,
         ),
       ),
       floatingActionButton: floatingActionButton,

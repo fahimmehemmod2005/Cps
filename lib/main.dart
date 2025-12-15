@@ -9,7 +9,7 @@ void main(){
       designSize: const Size(374, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) {
+      builder: (_, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: "Cps",

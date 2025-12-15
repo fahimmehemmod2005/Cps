@@ -1,13 +1,28 @@
 import 'package:cps/utils/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomInputField extends StatelessWidget {
-  final String? topLabel, hintText;
-  final String imagePath;
+  final String? topLabel;
+  final String? hintText;
+  final String? prefixPath;
+  final String? suffixPath;
+  final TextEditingController? controller;
+  final bool obscureText;
+  final String? Function(String?)? validator;
+  final TextInputType keyboardType;
+
   const CustomInputField({
-   required this.imagePath, this.topLabel, this.hintText,
+    super.key,
+    this.topLabel,
+    this.hintText,
+    this.prefixPath,
+    this.suffixPath,
+    this.controller,
+    this.obscureText = false,
+    this.validator,
+    this.keyboardType = TextInputType.text,
   });
 
   @override
@@ -15,10 +30,17 @@ class CustomInputField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(topLabel ?? "", style: MyStyles.title12_400w(color: Color(0xff2C2C2C)),),
-        SizedBox(height: 5.h),
+        if (topLabel != null && topLabel!.isNotEmpty)
+          Text(
+            topLabel!,
+            style: MyStyles.title12_400w(color: const Color(0xff2C2C2C)),
+          ),
+
+        if (topLabel != null && topLabel!.isNotEmpty) SizedBox(height: 5.h),
+
+        /// Gradient Border
         Container(
-          padding: const EdgeInsets.all(1), // border thickness
+          padding: const EdgeInsets.all(1),
           decoration: BoxDecoration(
             gradient: const LinearGradient(
               colors: [Color(0xff5245E5), Color(0xff9233E9)],
@@ -27,15 +49,43 @@ class CustomInputField extends StatelessWidget {
           ),
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.white, // background color
+              color: Colors.white,
               borderRadius: BorderRadius.circular(6.r),
             ),
             child: TextFormField(
+              controller: controller,
+              obscureText: obscureText,
+              validator: validator,
+              keyboardType: keyboardType,
               decoration: InputDecoration(
-                prefixIcon: Padding(padding: EdgeInsetsGeometry.all(13),child: SvgPicture.asset(imagePath,height: 20.h,width: 20.w)),
-                hintText: hintText ?? "",
-                hintStyle: MyStyles.title14_400w(color: Colors.black38),
                 border: InputBorder.none,
+
+                /// Prefix Icon
+                prefixIcon: prefixPath != null
+                    ? Padding(
+                        padding: EdgeInsets.all(13.r),
+                        child: SvgPicture.asset(
+                          prefixPath!,
+                          height: 20.h,
+                          width: 20.w,
+                        ),
+                      )
+                    : null,
+
+                /// Suffix Icon
+                suffixIcon: suffixPath != null
+                    ? Padding(
+                        padding: EdgeInsets.all(13.r),
+                        child: SvgPicture.asset(
+                          suffixPath!,
+                          height: 20.h,
+                          width: 20.w,
+                        ),
+                      )
+                    : null,
+
+                hintText: hintText ?? '',
+                hintStyle: MyStyles.title14_400w(color: Colors.black38),
                 contentPadding: EdgeInsets.symmetric(
                   horizontal: 16.w,
                   vertical: 14.h,

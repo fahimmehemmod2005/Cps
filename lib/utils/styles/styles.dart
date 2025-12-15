@@ -8,6 +8,7 @@ class MyStyles{
   static TextStyle title14_400w({Color? color}) => GoogleFonts.manrope(fontSize: 14.sp, fontWeight: FontWeight.w400, color: color);
   static TextStyle title12_400w({Color? color}) => GoogleFonts.manrope(fontSize: 12.sp, fontWeight: FontWeight.w400, color: color);
   static TextStyle title14_500w({Color? color}) => GoogleFonts.manrope(fontSize: 14.sp, fontWeight: FontWeight.w500, color: color);
+  static TextStyle title14_700w({Color? color}) => GoogleFonts.manrope(fontSize: 14.sp, fontWeight: FontWeight.w700, color: color);
   static TextStyle title24_600w({Color? color}) => GoogleFonts.poppins(fontSize: 24.sp, fontWeight: FontWeight.w600, color: color);
 
 }
