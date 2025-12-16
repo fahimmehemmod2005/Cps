@@ -1,0 +1,7 @@
+class MyImages {
+  MyImages._();
+
+  // gender
+  static const String male = 'assets/images/male.png';
+  static const String female = 'assets/images/female.png';
+}

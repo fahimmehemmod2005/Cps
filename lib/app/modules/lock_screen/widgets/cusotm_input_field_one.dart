@@ -7,22 +7,22 @@ class CustomInputFieldOne extends StatelessWidget {
   final String? topLabel;
   final String? hintText;
   final String? prefixPath;
-  final String? suffixPath;
   final TextEditingController? controller;
   final bool obscureText;
   final String? Function(String?)? validator;
   final TextInputType keyboardType;
+  final Widget? suffixIcon;
 
   const CustomInputFieldOne({
     super.key,
     this.topLabel,
     this.hintText,
     this.prefixPath,
-    this.suffixPath,
     this.controller,
     this.obscureText = false,
     this.validator,
     this.keyboardType = TextInputType.text,
+    this.suffixIcon,
   });
 
   @override
@@ -71,19 +71,7 @@ class CustomInputFieldOne extends StatelessWidget {
                         ),
                       )
                     : null,
-
-                /// Suffix Icon
-                suffixIcon: suffixPath != null
-                    ? Padding(
-                        padding: EdgeInsets.all(13.r),
-                        child: SvgPicture.asset(
-                          suffixPath!,
-                          height: 20.h,
-                          width: 20.w,
-                        ),
-                      )
-                    : null,
-
+                    suffixIcon: suffixIcon,
                 hintText: hintText ?? '',
                 hintStyle: MyStyles.title14_400w(color: Colors.black38),
                 contentPadding: EdgeInsets.symmetric(

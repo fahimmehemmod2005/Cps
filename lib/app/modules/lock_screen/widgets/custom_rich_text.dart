@@ -6,16 +6,24 @@ class Custom_Rich_Text extends StatelessWidget {
   final String secondText;
   final String? thirdText;
   final String? fourthText;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final VoidCallback? onPressed;
+  final TextStyle? firstStyle;
+  final TextStyle? secondStyle;
+  final TextStyle? thirdStyle;
+  final TextStyle? fourthStyle;
   const Custom_Rich_Text({
     super.key,
     required this.firstText,
     required this.secondText,
-    required this.onTap,
+    this.onTap,
     this.thirdText,
     this.fourthText,
     this.onPressed,
+    this.firstStyle,
+    this.secondStyle,
+    this.thirdStyle,
+    this.fourthStyle,
   });
 
   @override
@@ -25,20 +33,20 @@ class Custom_Rich_Text extends StatelessWidget {
         children: <TextSpan>[
           TextSpan(
             text: firstText,
-            style: TextStyle(color: Colors.black, fontSize: 13),
+            style: firstStyle ?? TextStyle(color: Colors.black, fontSize: 13),
           ),
           TextSpan(
             text: secondText,
-            style: TextStyle(color: Color(0xff9C3AFF), fontSize: 13),
+            style:secondStyle ?? TextStyle(color: Color(0xff9C3AFF), fontSize: 13),
             recognizer: TapGestureRecognizer()..onTap = onTap,
           ),
           TextSpan(
             text: thirdText,
-            style: TextStyle(color: Colors.black, fontSize: 13),
+            style:thirdStyle ?? TextStyle(color: Colors.black, fontSize: 13),
           ),
           TextSpan(
             text: fourthText,
-            style: TextStyle(color: Color(0xff9C3AFF), fontSize: 13),
+            style:fourthStyle ?? TextStyle(color: Color(0xff9C3AFF), fontSize: 13),
             recognizer: TapGestureRecognizer()..onTap = onPressed,
           ),
         ],

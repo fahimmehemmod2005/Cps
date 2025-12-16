@@ -16,7 +16,7 @@ class CustomGradientButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 44.h,
-        width: 336.w,
+        width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6.r),
           gradient: LinearGradient(
