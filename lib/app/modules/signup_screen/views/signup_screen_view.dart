@@ -45,6 +45,7 @@ class SignupScreenView extends GetView<SignupScreenController> {
 
           SizedBox(height: 30.h),
 
+          //__________________ name input field __________________
           CustomInputFieldTwo(
             topLabel: 'Name',
             hintText: 'Enter Full Name',
@@ -53,6 +54,7 @@ class SignupScreenView extends GetView<SignupScreenController> {
 
           SizedBox(height: 12.h),
 
+          //__________________ email input field __________________
           CustomInputFieldTwo(
             topLabel: 'Email',
             hintText: 'Enter Email Address',
@@ -61,10 +63,12 @@ class SignupScreenView extends GetView<SignupScreenController> {
 
           SizedBox(height: 12.h),
 
+          //__________________ date input field __________________
           DateTimePicker(dobController: dobController),
 
           SizedBox(height: 12.h),
 
+          //__________________ password input field __________________
           CustomInputFieldTwo(
             topLabel: 'Password',
             hintText: 'Enter Your Password',
@@ -74,6 +78,7 @@ class SignupScreenView extends GetView<SignupScreenController> {
 
           SizedBox(height: 12.h),
 
+          //__________________ confirm input field __________________
           CustomInputFieldTwo(
             topLabel: 'Confirm Password',
             hintText: 'Confirm Your Password',
@@ -83,13 +88,17 @@ class SignupScreenView extends GetView<SignupScreenController> {
 
           SizedBox(height: 12.h),
 
+          //__________________ checkbox __________________
           Row(
             children: [
               GradientCheckbox(
                 value: checkController.isNotEmpty,
                 onTap: checkController.toggle,
               ),
+
               SizedBox(width: 5.w),
+
+              //__________________ rich text __________________
               Custom_Rich_Text(
                 firstText: "I agree with ",
                 secondText: "terms & conditions ",
@@ -103,6 +112,7 @@ class SignupScreenView extends GetView<SignupScreenController> {
 
           SizedBox(height: 30),
 
+          //__________________ custom Button __________________
           CustomGradientButton(buttonText: 'Sign Up', onTap: () {}),
 
           SizedBox(height: 30),
@@ -130,6 +140,7 @@ class SignupScreenView extends GetView<SignupScreenController> {
                 text: 'Google',
                 onPressed: () {},
               ),
+
               CustomGradientSocialButton(
                 onPressed: () {},
                 imagePath: MyIcons.apple,
@@ -140,6 +151,7 @@ class SignupScreenView extends GetView<SignupScreenController> {
 
           SizedBox(height: 20.h),
 
+          //___________________________ Rich Text __________________________
           Custom_Rich_Text(
             firstText: 'Already have an account? ',
             secondText: "Sign in",
@@ -147,7 +159,7 @@ class SignupScreenView extends GetView<SignupScreenController> {
               Get.toNamed(Routes.LOCK_SCREEN);
             },
           ),
-          MySizes.bottomSafeArea
+          MySizes.bottomSafeArea,
         ],
       ),
     );
