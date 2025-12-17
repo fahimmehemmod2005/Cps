@@ -1,4 +1,5 @@
 import 'package:cps/app/modules/gender_screen/widget/select_gender.dart';
+import 'package:cps/app/modules/select_country_screen/views/select_country_screen_view.dart';
 import 'package:cps/app/modules/signup_steps_screen/views/signup_steps_screen_view.dart';
 import 'package:cps/common/custom_scaffold/custom_scaffold.dart';
 import 'package:cps/common/widgets/custom_back_button/custom_back_button.dart';
@@ -45,7 +46,7 @@ class GenderScreenView extends GetView<GenderScreenController> {
                   gradientSecond: Color(0xffD9277A),
                   onPressed: () {
                     Get.to(
-                      SignupStepsScreenView(),
+                      SelectCountryScreenView(),
                       transition: Transition.zoom,
                       duration: Duration(milliseconds: 300),
                     );
@@ -59,7 +60,7 @@ class GenderScreenView extends GetView<GenderScreenController> {
                   gradientSecond: Color(0xff9233E9),
                   onPressed: () {
                     Get.to(
-                      SignupStepsScreenView(),
+                      SelectCountryScreenView(),
                       transition: Transition.zoom,
                       duration: Duration(milliseconds: 300),
                     );

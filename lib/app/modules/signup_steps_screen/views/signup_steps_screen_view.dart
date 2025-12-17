@@ -9,6 +9,8 @@ class SignupStepsScreenView extends GetView<SignupStepsScreenController> {
   const SignupStepsScreenView({super.key});
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold();
+    return CustomScaffold(
+      
+    );
   }
 }

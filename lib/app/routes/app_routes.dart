@@ -10,6 +10,7 @@ abstract class Routes {
   static const NEXT_TERMS_SCREEN = _Paths.NEXT_TERMS_SCREEN;
   static const GENDER_SCREEN = _Paths.GENDER_SCREEN;
   static const SIGNUP_STEPS_SCREEN = _Paths.SIGNUP_STEPS_SCREEN;
+  static const SELECT_COUNTRY_SCREEN = _Paths.SELECT_COUNTRY_SCREEN;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const NEXT_TERMS_SCREEN = '/next-terms-screen';
   static const GENDER_SCREEN = '/gender-screen';
   static const SIGNUP_STEPS_SCREEN = '/signup-steps-screen';
+  static const SELECT_COUNTRY_SCREEN = '/select-country-screen';
 }
