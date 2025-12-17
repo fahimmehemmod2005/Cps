@@ -1,6 +1,5 @@
 import 'package:cps/app/modules/gender_screen/widget/select_gender.dart';
 import 'package:cps/app/modules/select_country_screen/views/select_country_screen_view.dart';
-import 'package:cps/app/modules/signup_steps_screen/views/signup_steps_screen_view.dart';
 import 'package:cps/common/custom_scaffold/custom_scaffold.dart';
 import 'package:cps/common/widgets/custom_back_button/custom_back_button.dart';
 import 'package:cps/utils/pictures/icons/icons.dart';
@@ -8,10 +7,7 @@ import 'package:cps/utils/pictures/images/images.dart';
 import 'package:cps/utils/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-
 import 'package:get/get.dart';
-
 import '../controllers/gender_screen_controller.dart';
 
 class GenderScreenView extends GetView<GenderScreenController> {
@@ -25,10 +21,12 @@ class GenderScreenView extends GetView<GenderScreenController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            //_____________________ back Button _______________________
             CustomBackButton(imagePath: MyIcons.leftArrow),
 
             SizedBox(height: 212.h),
 
+            //___________________ Gender Title ___________________________
             Text(
               'Your Gender?',
               style: MyStyles.title22_700(color: Color(0xff2C2C2C)),
@@ -36,9 +34,11 @@ class GenderScreenView extends GetView<GenderScreenController> {
 
             SizedBox(height: 43.h),
 
+            //_______________________ Selected Gender __________________
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                //_____________________ male _______________________
                 SelectGender(
                   text: 'Male',
                   imagePath: MyImages.male,
@@ -52,7 +52,10 @@ class GenderScreenView extends GetView<GenderScreenController> {
                     );
                   },
                 ),
+
                 SizedBox(width: 50.w),
+
+                // _______________________ Felmale _________________________
                 SelectGender(
                   text: 'Female',
                   imagePath: MyImages.female,

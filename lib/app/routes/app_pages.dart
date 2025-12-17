@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import '../modules/gender_screen/bindings/gender_screen_binding.dart';
 import '../modules/gender_screen/views/gender_screen_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -16,13 +15,12 @@ import '../modules/signup_steps_screen/bindings/signup_steps_screen_binding.dart
 import '../modules/signup_steps_screen/views/signup_steps_screen_view.dart';
 import '../modules/welcome_offer_screen/bindings/welcome_offer_screen_binding.dart';
 import '../modules/welcome_offer_screen/views/welcome_offer_screen_view.dart';
-
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.GENDER_SCREEN;
+  static const INITIAL = Routes.LOCK_SCREEN;
 
   static final routes = [
     GetPage(

@@ -16,5 +16,6 @@ class MyIcons {
   static const String cancel = 'assets/icons/cancel.svg';
   static const String simplification = 'assets/icons/Simplification.svg';
   static const String leftArrow = 'assets/icons/left arrow.svg';
-
-}
+  static const String search = 'assets/icons/search.svg';
+  static const String checkDot = 'assets/icons/check dot.svg';
+  }

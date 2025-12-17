@@ -7,7 +7,6 @@ import 'package:cps/app/modules/signup_screen/controllers/date_of_birth_controll
 import 'package:cps/app/modules/signup_screen/widgets/custom_input_field_two.dart';
 import 'package:cps/app/modules/signup_screen/widgets/date_time_picker.dart';
 import 'package:cps/app/modules/welcome_offer_screen/views/welcome_offer_screen_view.dart';
-import 'package:cps/app/routes/app_pages.dart';
 import 'package:cps/common/custom_scaffold/custom_scaffold.dart';
 import 'package:cps/common/widgets/custom_gradient_button/custom_gradient_button.dart';
 import 'package:cps/common/widgets/custom_gradient_button/custom_gradient_social_button.dart';
