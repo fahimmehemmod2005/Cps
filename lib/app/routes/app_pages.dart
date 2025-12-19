@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import '../modules/gender_screen/bindings/gender_screen_binding.dart';
 import '../modules/gender_screen/views/gender_screen_view.dart';
+import '../modules/signup_steps/bot_hello/bindings/bot_hello_binding.dart';
+import '../modules/signup_steps/bot_hello/views/bot_hello_view.dart';
 import '../modules/signup_steps/goal/bindings/goal_binding.dart';
 import '../modules/signup_steps/goal/views/goal_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -19,8 +21,6 @@ import '../modules/select_country_screen/bindings/select_country_screen_binding.
 import '../modules/select_country_screen/views/select_country_screen_view.dart';
 import '../modules/signup_screen/bindings/signup_screen_binding.dart';
 import '../modules/signup_screen/views/signup_screen_view.dart';
-import '../modules/signup_steps/signup_steps_screen/bindings/signup_steps_screen_binding.dart';
-import '../modules/signup_steps/signup_steps_screen/views/signup_steps_screen_view.dart';
 import '../modules/signup_steps/sleep/bindings/sleep_binding.dart';
 import '../modules/signup_steps/sleep/views/sleep_view.dart';
 import '../modules/welcome_offer_screen/bindings/welcome_offer_screen_binding.dart';
@@ -31,7 +31,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.GENDER_SCREEN;
+  static const INITIAL = Routes.BOT_HELLO;
 
   static final routes = [
     GetPage(
@@ -65,9 +65,9 @@ class AppPages {
       binding: GenderScreenBinding(),
     ),
     GetPage(
-      name: _Paths.SIGNUP_STEPS_SCREEN,
-      page: () => const SignupStepsScreenView(),
-      binding: SignupStepsScreenBinding(),
+      name: _Paths.BOT_HELLO,
+      page: () => const BotHello(),
+      binding: BotHelloBinding(),
     ),
     GetPage(
       name: _Paths.SELECT_COUNTRY_SCREEN,

@@ -9,7 +9,7 @@ abstract class Routes {
   static const WELCOME_OFFER_SCREEN = _Paths.WELCOME_OFFER_SCREEN;
   static const NEXT_TERMS_SCREEN = _Paths.NEXT_TERMS_SCREEN;
   static const GENDER_SCREEN = _Paths.GENDER_SCREEN;
-  static const SIGNUP_STEPS_SCREEN = _Paths.SIGNUP_STEPS_SCREEN;
+  static const BOT_HELLO = _Paths.BOT_HELLO;
   static const SELECT_COUNTRY_SCREEN = _Paths.SELECT_COUNTRY_SCREEN;
   static const ONBOARDING_PAGE = _Paths.ONBOARDING_PAGE;
   static const MOOD = _Paths.MOOD;
@@ -26,7 +26,7 @@ abstract class _Paths {
   static const WELCOME_OFFER_SCREEN = '/welcome-offer-screen';
   static const NEXT_TERMS_SCREEN = '/next-terms-screen';
   static const GENDER_SCREEN = '/gender-screen';
-  static const SIGNUP_STEPS_SCREEN = '/signup-steps-screen';
+  static const BOT_HELLO = '/bot-hello';
   static const SELECT_COUNTRY_SCREEN = '/select-country-screen';
   static const ONBOARDING_PAGE = '/onboarding-page';
   static const MOOD = '/mood';

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class SignupStepsScreenController extends GetxController {
+class BotHelloController extends GetxController {
   //TODO: Implement SignupStepsScreenController
 
   final count = 0.obs;
