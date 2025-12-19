@@ -11,6 +11,11 @@ abstract class Routes {
   static const GENDER_SCREEN = _Paths.GENDER_SCREEN;
   static const SIGNUP_STEPS_SCREEN = _Paths.SIGNUP_STEPS_SCREEN;
   static const SELECT_COUNTRY_SCREEN = _Paths.SELECT_COUNTRY_SCREEN;
+  static const ONBOARDING_PAGE = _Paths.ONBOARDING_PAGE;
+  static const MOOD = _Paths.MOOD;
+  static const GOAL = _Paths.GOAL;
+  static const SLEEP = _Paths.SLEEP;
+  static const REMINDER = _Paths.REMINDER;
 }
 
 abstract class _Paths {
@@ -23,4 +28,9 @@ abstract class _Paths {
   static const GENDER_SCREEN = '/gender-screen';
   static const SIGNUP_STEPS_SCREEN = '/signup-steps-screen';
   static const SELECT_COUNTRY_SCREEN = '/select-country-screen';
+  static const ONBOARDING_PAGE = '/onboarding-page';
+  static const MOOD = '/mood';
+  static const GOAL = '/goal';
+  static const SLEEP = '/sleep';
+  static const REMINDER = '/reminder';
 }

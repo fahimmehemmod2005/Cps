@@ -1,6 +1,6 @@
 import 'package:cps/app/modules/select_country_screen/widgets/country_find.dart';
+import 'package:cps/common/custom_container/custom_container.dart';
 import 'package:cps/common/widgets/custom_app_bar/custom_app_bar.dart';
-import 'package:cps/common/widgets/custom_back_button/custom_back_button.dart';
 import 'package:cps/common/widgets/custom_gradient_button/custom_gradient_button.dart';
 import 'package:cps/utils/pictures/icons/icons.dart';
 import 'package:cps/utils/styles/styles.dart';
@@ -18,14 +18,7 @@ class SelectCountryScreenView extends GetView<SelectCountryScreenController> {
       SelectCountryScreenController(),
     );
     return Scaffold(
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xffCDD6FF), Color(0xffE6D4FF)],
-          ),
-        ),
+      body: CustomContainer(
         child: SafeArea(
           bottom: true,
           top: true,
@@ -34,7 +27,10 @@ class SelectCountryScreenView extends GetView<SelectCountryScreenController> {
             child: Column(
               children: [
                 SizedBox(height: 3.h),
-                CustomAppBar(imagePath: MyIcons.leftArrow,text: 'Select Country',),
+                CustomAppBar(
+                  imagePath: MyIcons.leftArrow,
+                  text: 'Select Country',
+                ),
 
                 SizedBox(height: 30.h),
                 //_________________ Search Bar
@@ -53,62 +49,91 @@ class SelectCountryScreenView extends GetView<SelectCountryScreenController> {
 
                 SizedBox(height: 20.h),
                 //_________________ Country List _________________
-                Expanded(
-                  child: Obx(
-                    () => ListView.builder(
+                Obx(
+                  () => Expanded(
+                    child: ListView.builder(
                       itemCount: controller.filteredCountries.length,
                       itemBuilder: (context, index) {
                         final country = controller.filteredCountries[index];
-                        return Obx(
-                          () => Container(
-                            margin: const EdgeInsets.only(bottom: 12),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(
-                                color:
-                                    controller
-                                            .selectedCountry
-                                            .value
-                                            ?.countryCode ==
-                                        country.countryCode
-                                    ? const Color(0xFF5B5FEF)
-                                    : Colors.black12,
-                                width: 1.5,
-                              ),
-                            ),
-                            child: ListTile(
-                              onTap: () => controller.selectCountry(country),
-                              leading: Text(
-                                country.flagEmoji,
-                                style: const TextStyle(fontSize: 32),
-                              ),
-                              title: Text(
-                                country.name,
-                                style: MyStyles.title14_400w(
-                                  color: Colors.black54,
-                                ),
-                              ),
-                              trailing:
-                                  controller
-                                          .selectedCountry
-                                          .value
-                                          ?.countryCode ==
-                                      country.countryCode
-                                  ? SizedBox(
-                                      child: SvgPicture.asset(
-                                        MyIcons.checkDot,
-                                        height: 20.h,
-                                        width: 20.w,
+                        return Obx(() {
+                          final isSelected =
+                              controller.selectedCountry.value?.countryCode ==
+                              country.countryCode;
+                          return GestureDetector(
+                            onTap: () => controller.selectCountry(country),
+                            child: Container(
+                              height: 46.h,
+                              width: double.infinity,
+                              margin: EdgeInsets.only(bottom: 12.h),
+                              padding: EdgeInsets.all(
+                                isSelected ? 1.5.w : 0,
+                              ), // gradient border width
+                              decoration: isSelected
+                                  ? BoxDecoration(
+                                      borderRadius: BorderRadius.circular(6.r),
+                                      gradient: const LinearGradient(
+                                        colors: [
+                                          Color(0xff5245E5),
+                                          Color(0xff9233E9),
+                                        ],
                                       ),
                                     )
-                                  : const SizedBox(width: 24, height: 24),
-                              contentPadding: EdgeInsets.symmetric(
-                                horizontal: 16.w,
-                                vertical: 4.h,
+                                  : null,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(6.r),
+                                  border: isSelected
+                                      ? null
+                                      : Border.all(
+                                          color: Colors.black12,
+                                          width: 1.5.w,
+                                        ),
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xffCDD6FF),
+                                      Color(0xffE6D4FF),
+                                    ],
+                                  ),
+                                ),
+                                child: Center(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        country.flagEmoji,
+                                        style: TextStyle(fontSize: 28.sp),
+                                      ),
+                                      SizedBox(width: 10.w),
+
+                                      /// Country name (NO OVERFLOW)
+                                      Expanded(
+                                        child: Text(
+                                          country.name,
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: MyStyles.title14_400w(
+                                            color: Colors.black54,
+                                          ),
+                                        ),
+                                      ),
+
+                                      SizedBox(width: 8.w),
+
+                                      isSelected
+                                          ? SvgPicture.asset(
+                                              MyIcons.checkDot,
+                                              height: 20.h,
+                                              width: 20.w,
+                                            )
+                                          : SizedBox(width: 20.w, height: 20.h),
+                                    ],
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        );
+                          );
+                        });
                       },
                     ),
                   ),

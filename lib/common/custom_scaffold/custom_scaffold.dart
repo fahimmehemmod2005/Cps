@@ -27,9 +27,12 @@ class CustomScaffold extends StatelessWidget {
             ]
           ),
         ),
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 19.w),
-          child: body,
+        child: SafeArea(
+          top: true,bottom: true,
+          child: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: 19.w),
+            child: body,
+          ),
         ),
       ),
       floatingActionButton: floatingActionButton,

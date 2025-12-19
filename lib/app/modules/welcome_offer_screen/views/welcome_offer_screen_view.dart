@@ -17,113 +17,109 @@ class WelcomeOfferScreenView extends GetView<WelcomeOfferScreenController> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      body: SafeArea(
-        top: true,
-        bottom: true,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-        
-            //________________ Back Button _______________________
-            CustomBackButton(imagePath: MyIcons.cancel),
-        
-            SizedBox(height: 87.57.h),
-        
-            //__________________ Title ___________________
-            Container(
-              height: 28.h,
-              width: 135.w,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Color(0xff5245E5), Color(0xff9233E9)],
-                ),
-                borderRadius: BorderRadius.circular(6.r),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+      
+          //________________ Back Button _______________________
+          CustomBackButton(imagePath: MyIcons.cancel),
+      
+          SizedBox(height: 87.57.h),
+      
+          //__________________ Title ___________________
+          Container(
+            height: 28.h,
+            width: 135.w,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xff5245E5), Color(0xff9233E9)],
               ),
-              child: Center(
-                child: Text(
-                  'WELCOME OFFER',
-                  style: MyStyles.title14_500(color: Color(0xffFAFAFA)),
-                ),
+              borderRadius: BorderRadius.circular(6.r),
+            ),
+            child: Center(
+              child: Text(
+                'WELCOME OFFER',
+                style: MyStyles.title14_500(color: Color(0xffFAFAFA)),
               ),
             ),
-            SizedBox(height: 20.h),
-        
-            //______________ sub title __________________
-            Text(
-              textAlign: TextAlign.center,
-              "Become your\nown self-care\nhero",
-              style: MyStyles.title24_700w(color: Color(0xff2C2C2C)),
+          ),
+          SizedBox(height: 20.h),
+      
+          //______________ sub title __________________
+          Text(
+            textAlign: TextAlign.center,
+            "Become your\nown self-care\nhero",
+            style: MyStyles.title24_700w(color: Color(0xff2C2C2C)),
+          ),
+      
+          SizedBox(height: 60.h),
+      
+          //__________________ premium features __________________________
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 40.5),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomFeatures(text: "All Premium Monthly features"),
+                SizedBox(height: 20.h),
+                CustomFeatures(text: "Exclusive Guided Journeys"),
+                SizedBox(height: 20.h),
+                CustomFeatures(text: "Early Access to New Features"),
+                SizedBox(height: 20.h),
+                CustomFeatures(text: "Founding Member Badge"),
+              ],
             ),
-        
-            SizedBox(height: 60.h),
-        
-            //__________________ premium features __________________________
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.5),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CustomFeatures(text: "All Premium Monthly features"),
-                  SizedBox(height: 20.h),
-                  CustomFeatures(text: "Exclusive Guided Journeys"),
-                  SizedBox(height: 20.h),
-                  CustomFeatures(text: "Early Access to New Features"),
-                  SizedBox(height: 20.h),
-                  CustomFeatures(text: "Founding Member Badge"),
-                ],
-              ),
+          ),
+      
+          SizedBox(height: 40.h),
+      
+          //__________________ Price __________________________
+          Container(
+            height: 78.h,
+            width: 253.w,
+            decoration: BoxDecoration(
+              color: Color(0xFFB6A9FF),
+              borderRadius: BorderRadius.circular(10),
             ),
-        
-            SizedBox(height: 40.h),
-        
-            //__________________ Price __________________________
-            Container(
-              height: 78.h,
-              width: 253.w,
-              decoration: BoxDecoration(
-                color: Color(0xFFB6A9FF),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Custom_Rich_Text(
-                    firstText: "\$79.99 ",
-                    firstStyle: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14.sp,
-                      color: Colors.black38,
-                      decoration: TextDecoration.lineThrough,
-                      decorationThickness: 1.5,
-                    ),
-                    secondText: "\$39.99/year",
-                    secondStyle: MyStyles.title14_500(color: Color(0xff2C2C2C)),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Custom_Rich_Text(
+                  firstText: "\$79.99 ",
+                  firstStyle: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14.sp,
+                    color: Colors.black38,
+                    decoration: TextDecoration.lineThrough,
+                    decorationThickness: 1.5,
                   ),
-                  SizedBox(height: 10.h),
-                  Custom_Rich_Text(
-                    firstText: "Pay once, ",
-                    firstStyle: MyStyles.title14_500(color: Color(0xff2C2C2C)),
-                    secondText: "save 50%",
-                    secondStyle: MyStyles.title14_500(color: Color(0xff2C2C2C)),
-                  ),
-                ],
-              ),
+                  secondText: "\$39.99/year",
+                  secondStyle: MyStyles.title14_500(color: Color(0xff2C2C2C)),
+                ),
+                SizedBox(height: 10.h),
+                Custom_Rich_Text(
+                  firstText: "Pay once, ",
+                  firstStyle: MyStyles.title14_500(color: Color(0xff2C2C2C)),
+                  secondText: "save 50%",
+                  secondStyle: MyStyles.title14_500(color: Color(0xff2C2C2C)),
+                ),
+              ],
             ),
-        
-            SizedBox(height: 84.h),
-        
-            //_______________________ Continue Buttion _______________________
-            CustomGradientButton(buttonText: "Continue", onTap: () {
-              Get.to(
-                NextTermsScreenView(),
-                transition: Transition.downToUp,
-                duration: Duration(milliseconds: 400)
-              );
-            }),
-        
-          ],
-        ),
+          ),
+      
+          SizedBox(height: 84.h),
+      
+          //_______________________ Continue Buttion _______________________
+          CustomGradientButton(buttonText: "Continue", onTap: () {
+            Get.to(
+              NextTermsScreenView(),
+              transition: Transition.downToUp,
+              duration: Duration(milliseconds: 400)
+            );
+          }),
+      
+        ],
       ),
     );
   }
