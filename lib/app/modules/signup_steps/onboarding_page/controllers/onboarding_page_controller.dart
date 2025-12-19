@@ -1,6 +1,7 @@
 // ==================== CONTROLLER ====================
 // File: onboarding_page_controller.dart
 
+import 'package:cps/app/modules/signup_steps/bot_hello/views/bot_hello_view.dart';
 import 'package:get/get.dart';
 
 class OnboardingPageController extends GetxController {
@@ -81,7 +82,7 @@ class OnboardingPageController extends GetxController {
     print('Reminder Time: ${getFormattedReminderTime()}');
     
     // Navigate to home screen
-    // Get.offAllNamed('/home');
+    Get.to(BotHello(),transition: Transition.downToUp,duration: Duration(milliseconds: 400));
   }
 
   @override
