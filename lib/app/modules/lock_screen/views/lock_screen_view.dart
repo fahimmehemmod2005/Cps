@@ -3,7 +3,6 @@ import 'package:cps/app/modules/lock_screen/controllers/checkbox_controller.dart
 import 'package:cps/app/modules/lock_screen/widgets/custom_checkbox.dart';
 import 'package:cps/app/modules/lock_screen/widgets/custom_rich_text.dart';
 import 'package:cps/app/modules/signup_screen/views/signup_screen_view.dart';
-import 'package:cps/app/routes/app_pages.dart';
 import 'package:cps/common/custom_scaffold/custom_scaffold.dart';
 import 'package:cps/common/widgets/custom_gradient_button/custom_gradient_button.dart';
 import 'package:cps/common/widgets/custom_gradient_button/custom_gradient_social_button.dart';

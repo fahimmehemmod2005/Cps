@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import '../modules/gender_screen/bindings/gender_screen_binding.dart';
 import '../modules/gender_screen/views/gender_screen_view.dart';
 import '../modules/signup_steps/goal/bindings/goal_binding.dart';
@@ -32,7 +31,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.LOCK_SCREEN;
+  static const INITIAL = Routes.GENDER_SCREEN;
 
   static final routes = [
     GetPage(

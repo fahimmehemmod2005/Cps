@@ -1,5 +1,7 @@
-import 'package:get/get.dart';
+// ==================== BINDING ====================
+// File: onboarding_page_binding.dart
 
+import 'package:get/get.dart';
 import '../controllers/onboarding_page_controller.dart';
 
 class OnboardingPageBinding extends Bindings {
