@@ -9,11 +9,10 @@ class BotHello extends GetView<BotHelloController> {
   const BotHello({super.key});
   @override
   Widget build(BuildContext context) {
-    final BotHelloController controller = Get.find<BotHelloController>();
-    return CustomScaffold(
+    final splash = Get.put(BotHelloController());
+        return CustomScaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(height: 191.h,),
           Image.asset(MyImages.helloBot),
