@@ -31,7 +31,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.LOCK_SCREEN;
+  static const INITIAL = Routes.LOGIN;
 
   static final routes = [
     GetPage(
@@ -40,7 +40,7 @@ class AppPages {
       binding: HomeBinding(),
     ),
     GetPage(
-      name: _Paths.LOCK_SCREEN,
+      name: _Paths.LOGIN,
       page: () => const LoginScreen(),
       binding: LoginScreenBinding(),
     ),

@@ -2,7 +2,6 @@ import 'package:cps/app/modules/home/views/home_view.dart';
 import 'package:get/get.dart';
 
 class BotHelloController extends GetxController {
-  //TODO: Implement SplashController
   final count = 0.obs;
   @override
   void onInit() {

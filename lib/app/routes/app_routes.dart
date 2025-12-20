@@ -4,7 +4,7 @@ part of 'app_pages.dart';
 abstract class Routes {
   Routes._();
   static const HOME = _Paths.HOME;
-  static const LOCK_SCREEN = _Paths.LOCK_SCREEN;
+  static const LOGIN = _Paths.LOGIN;
   static const SIGNUP_SCREEN = _Paths.SIGNUP_SCREEN;
   static const WELCOME_OFFER_SCREEN = _Paths.WELCOME_OFFER_SCREEN;
   static const NEXT_TERMS_SCREEN = _Paths.NEXT_TERMS_SCREEN;
@@ -21,7 +21,7 @@ abstract class Routes {
 abstract class _Paths {
   _Paths._();
   static const HOME = '/home';
-  static const LOCK_SCREEN = '/lock-screen';
+  static const LOGIN = '/login-screen';
   static const SIGNUP_SCREEN = '/signup-screen';
   static const WELCOME_OFFER_SCREEN = '/welcome-offer-screen';
   static const NEXT_TERMS_SCREEN = '/next-terms-screen';
