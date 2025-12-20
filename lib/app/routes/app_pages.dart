@@ -1,3 +1,5 @@
+import 'package:cps/app/modules/login_screen/bindings/lock_screen_binding.dart';
+import 'package:cps/app/modules/login_screen/views/lock_screen_view.dart';
 import 'package:get/get.dart';
 import '../modules/gender_screen/bindings/gender_screen_binding.dart';
 import '../modules/gender_screen/views/gender_screen_view.dart';
@@ -7,8 +9,6 @@ import '../modules/signup_steps/goal/bindings/goal_binding.dart';
 import '../modules/signup_steps/goal/views/goal_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
-import '../modules/lock_screen/bindings/lock_screen_binding.dart';
-import '../modules/lock_screen/views/lock_screen_view.dart';
 import '../modules/signup_steps/mood/bindings/mood_binding.dart';
 import '../modules/signup_steps/mood/views/mood_view.dart';
 import '../modules/next_terms_screen/bindings/next_terms_screen_binding.dart';
@@ -31,7 +31,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.BOT_HELLO;
+  static const INITIAL = Routes.LOCK_SCREEN;
 
   static final routes = [
     GetPage(
@@ -41,8 +41,8 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.LOCK_SCREEN,
-      page: () => const LockScreenView(),
-      binding: LockScreenBinding(),
+      page: () => const LoginScreen(),
+      binding: LoginScreenBinding(),
     ),
     GetPage(
       name: _Paths.SIGNUP_SCREEN,

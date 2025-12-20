@@ -1,8 +1,5 @@
-import 'package:cps/app/modules/lock_screen/controllers/checkbox_controller.dart';
-import 'package:cps/app/modules/lock_screen/controllers/lock_screen_controller.dart';
-import 'package:cps/app/modules/lock_screen/views/lock_screen_view.dart';
-import 'package:cps/app/modules/lock_screen/widgets/custom_checkbox.dart';
-import 'package:cps/app/modules/lock_screen/widgets/custom_rich_text.dart';
+import 'package:cps/app/modules/login_screen/controllers/login_screen_controller.dart';
+import 'package:cps/app/modules/login_screen/views/lock_screen_view.dart';
 import 'package:cps/app/modules/signup_screen/controllers/date_of_birth_controller.dart';
 import 'package:cps/app/modules/signup_screen/widgets/custom_input_field_two.dart';
 import 'package:cps/app/modules/signup_screen/widgets/date_time_picker.dart';
@@ -16,6 +13,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import '../../login_screen/controllers/checkbox_controller.dart';
+import '../../login_screen/widgets/custom_checkbox.dart';
+import '../../login_screen/widgets/custom_rich_text.dart';
 import '../controllers/signup_screen_controller.dart';
 
 class SignupScreenView extends GetView<SignupScreenController> {
@@ -25,7 +25,7 @@ class SignupScreenView extends GetView<SignupScreenController> {
     final DateOfBirthController dobController = Get.put(
       DateOfBirthController(),
     );
-    final LockScreenController passController = Get.put(LockScreenController());
+    final LoginScreenController passController = Get.put(LoginScreenController());
     final CheckboxController checkController = Get.put(CheckboxController());
 
     return CustomScaffold(
@@ -199,7 +199,7 @@ class SignupScreenView extends GetView<SignupScreenController> {
             onTap: () {
              
               Get.to(
-                LockScreenView(),
+                LoginScreen(),
                 transition: Transition.rightToLeft,
                 duration: Duration(milliseconds: 400)
               );

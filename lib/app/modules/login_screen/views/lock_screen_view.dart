@@ -1,12 +1,8 @@
 import 'package:cps/app/modules/home/views/home_view.dart';
-import 'package:cps/app/modules/lock_screen/controllers/checkbox_controller.dart';
-import 'package:cps/app/modules/lock_screen/widgets/custom_checkbox.dart';
-import 'package:cps/app/modules/lock_screen/widgets/custom_rich_text.dart';
 import 'package:cps/app/modules/signup_screen/views/signup_screen_view.dart';
 import 'package:cps/common/custom_scaffold/custom_scaffold.dart';
 import 'package:cps/common/widgets/custom_gradient_button/custom_gradient_button.dart';
 import 'package:cps/common/widgets/custom_gradient_button/custom_gradient_social_button.dart';
-import 'package:cps/app/modules/lock_screen/widgets/cusotm_input_field_one.dart';
 import 'package:cps/common/widgets/custom_svg/custom_svg.dart';
 import 'package:cps/utils/pictures/icons/icons.dart';
 import 'package:cps/utils/styles/styles.dart';
@@ -14,14 +10,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import '../controllers/lock_screen_controller.dart';
+import '../controllers/checkbox_controller.dart';
+import '../controllers/login_screen_controller.dart';
+import '../widgets/cusotm_input_field_one.dart';
+import '../widgets/custom_checkbox.dart';
+import '../widgets/custom_rich_text.dart';
 
-class LockScreenView extends GetView<LockScreenController> {
-  const LockScreenView({super.key});
+class LoginScreen extends GetView<LoginScreenController> {
+  const LoginScreen({super.key});
   @override
   Widget build(BuildContext context) {
     final CheckboxController checkController = Get.put(CheckboxController());
-    final LockScreenController passController = Get.put(LockScreenController());
+    final LoginScreenController passController = Get.put(LoginScreenController());
 
     return CustomScaffold(
       body: Column(

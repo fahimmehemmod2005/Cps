@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class LockScreenController extends GetxController {
+class LoginScreenController extends GetxController {
   RxBool isPasswordHidden = true.obs;
   RxBool isConfirmPasswordHidden = true.obs;
 

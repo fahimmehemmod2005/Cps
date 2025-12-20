@@ -1,4 +1,3 @@
-import 'package:cps/app/modules/lock_screen/widgets/custom_rich_text.dart';
 import 'package:cps/app/modules/next_terms_screen/views/next_terms_screen_view.dart';
 import 'package:cps/app/modules/welcome_offer_screen/widgets/custom_features.dart';
 import 'package:cps/common/custom_scaffold/custom_scaffold.dart';
@@ -10,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../login_screen/widgets/custom_rich_text.dart';
 import '../controllers/welcome_offer_screen_controller.dart';
 
 class WelcomeOfferScreenView extends GetView<WelcomeOfferScreenController> {
