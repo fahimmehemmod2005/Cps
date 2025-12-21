@@ -120,7 +120,7 @@ class LoginScreen extends GetView<LoginScreenController> {
           //______________________ Sign In button ___________________________
           CustomGradientButton(buttonText: "Sign In", onTap: () {
             
-              Get.to(
+              Get.offAll(
                 HomeView(),
                 transition: Transition.fade,
                 duration: Duration(milliseconds: 400)

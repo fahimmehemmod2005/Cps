@@ -1,4 +1,3 @@
-
 class MyIcons {
   MyIcons._();
 
@@ -18,4 +17,8 @@ class MyIcons {
   static const String leftArrow = 'assets/icons/left arrow.svg';
   static const String search = 'assets/icons/search.svg';
   static const String checkDot = 'assets/icons/check dot.svg';
-  }
+  static const String aiCoach = 'assets/icons/ai coach.svg';
+  static const String faith = 'assets/icons/faith.svg';
+  static const String home = 'assets/icons/home.svg';
+  static const String journal = 'assets/icons/journal.svg';
+}

@@ -16,6 +16,7 @@ class MyStyles{
   static TextStyle title18_700w({Color? color}) => GoogleFonts.poppins(fontSize: 18.sp, fontWeight: FontWeight.w700, color: color);
   static TextStyle title14_500({Color? color}) => GoogleFonts.poppins(fontSize: 14.sp, fontWeight: FontWeight.w500, color: color);
   static TextStyle title22_700({Color? color}) => GoogleFonts.manrope(fontSize: 22.sp, fontWeight: FontWeight.w700, color: color);
+  static TextStyle title20_500({Color? color}) => GoogleFonts.manrope(fontSize: 20.sp, fontWeight: FontWeight.w500, color: color);
 
 }
 

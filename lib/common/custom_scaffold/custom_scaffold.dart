@@ -18,17 +18,16 @@ class CustomScaffold extends StatelessWidget {
     return Scaffold(
       appBar: appBar,
       body: Container(
-        height: double.infinity,width: double.infinity,
+        height: double.infinity,
+        width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              Color(0xffCDD6FF),
-              Color(0xffE6D4FF),
-            ]
+            colors: [Color(0xffCDD6FF), Color(0xffE6D4FF)],
           ),
         ),
         child: SafeArea(
-          top: true,bottom: true,
+          top: true,
+          bottom: true,
           child: SingleChildScrollView(
             padding: EdgeInsets.symmetric(horizontal: 19.w),
             child: body,
